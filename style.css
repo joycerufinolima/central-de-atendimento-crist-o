@@ -20,17 +20,137 @@ body {
   color: var(--cor-texto);
 }
 
-.topo {
-  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-  color: white;
+.topo-devocional{
+  height: 300px;
+  background: url('imagens/cruz.png') center/cover no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
-  padding: 80px 20px 40px;
+  color: white;
+  position: relative;
+}
+
+/* overlay */
+.topo-imagem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* garantir que texto fique por cima */
+.topo-imagem h1,
+.topo-imagem p {
+  position: relative;
+  z-index: 2;
+}
+
+.topo-oracao{
+  height: 300px;
+  background: url('imagens/calice.png') center/cover no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* overlay */
+.topo-imagem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* garantir que texto fique por cima */
+.topo-imagem h1,
+.topo-imagem p {
+  position: relative;
+  z-index: 2;
+
+}
+
+.topo-contato{
+  height: 300px;
+  background: url('imagens/coroa.png') center/cover no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* overlay */
+.topo-imagem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* garantir que texto fique por cima */
+.topo-imagem h1,
+.topo-imagem p {
+  position: relative;
+  z-index: 2;
+}
+.topo-aconselhamento{
+  height: 300px;
+  background: url('imagens/pomba.png') center/cover no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* overlay */
+.topo-imagem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* garantir que texto fique por cima */
+.topo-imagem h1,
+.topo-imagem p {
+  position: relative;
+  z-index: 2;
+
+}
+.topo h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.topo p {
+  opacity: 0.9;
+  font-size: 18px;
 }
 
 .header-interno {
   position: relative;
   background: var(--cor-primaria);
   color: white;
+  padding: 15px 20px;
 }
 
 header {
@@ -46,6 +166,15 @@ header {
   background: transparent;
   color: white;
   z-index: 3;
+}
+
+.bloco {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 
@@ -117,10 +246,11 @@ nav a:hover {
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 900px; /* menor que a home */
   margin: auto;
   padding: 40px 20px;
 }
+
 
 .card {
   background: white;
