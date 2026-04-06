@@ -256,3 +256,50 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* 🔹 Rolagem suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 🔹 Botões de filtro */
+.filtro {
+  display: flex;
+  gap: 10px;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.filtro a {
+  padding: 10px 20px;
+  background-color: #6b46c1;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.filtro a:hover {
+  background-color: #7c53d1;
+  transform: translateY(-2px);
+}
+
+/* 🔹 Espaçamento das categorias */
+h2 {
+  margin-top: 40px;
+}
+
+/* 🔥 efeito de destaque */
+.categoria {
+  transition: all 0.3s ease;
+}
+
+.categoria.apagado {
+  opacity: 0.3;
+  transform: scale(0.98);
+}
+
+/* rolagem suave */
+html {
+  scroll-behavior: smooth;
+}

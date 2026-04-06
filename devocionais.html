@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
@@ -32,34 +32,51 @@
   </div>
 </section>
 
+<!-- 🔹 BOTÕES -->
+<div class="filtro">
+  <a href="#topo">Todos</a>
+  <a href="#amor">Amor</a>
+  <a href="#fe">Fé</a>
+</div>
+
+<div id="topo"></div>
+
 <div class="container">
-  <div class="cards">
 
-    <div class="card amor">
-      <h3>Devocional Amor 1</h3>
-      <p>Texto sobre amor...</p>
-      <a href="#" class="btn">Acessar!</a>
+  <!-- 🔹 CATEGORIA AMOR -->
+  <section id="amor" class="categoria">
+    <h2>Devocionais sobre Amor</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h3>Devocional Amor 1</h3>
+        <p>Texto sobre amor...</p>
+        <a href="#" class="btn">Acessar!</a>
+      </div>
+
+      <div class="card">
+        <h3>Devocional Amor 2</h3>
+        <p>Mais textos sobre amor...</p>
+        <a href="#" class="btn">Acessar!</a>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card fe">
-      <h3>Devocional Fé 1</h3>
-      <p>Texto sobre fé...</p>
-      <a href="#" class="btn">Acessar!</a>
+  <!-- 🔹 CATEGORIA FÉ -->
+  <section id="fe" class="categoria">
+    <h2>Devocionais sobre Fé</h2>
+    <div class="cards">
+
+      <div class="card">
+        <h3>Devocional Fé 1</h3>
+        <p>Texto sobre fé...</p>
+        <a href="#" class="btn">Acessar!</a>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card amor">
-      <h3>Devocional Amor 2</h3>
-      <p>Mais textos sobre amor...</p>
-      <a href="#" class="btn">Acessar!</a>
-    </div>
-
-    <div class="card fe">
-      <h3>Devocional Fé 2</h3>
-      <p>Mais textos sobre fé...</p>
-      <a href="#" class="btn">Acessar!</a>
-    </div>
-
-  </div>
 </div>
 
 <footer>
@@ -68,6 +85,31 @@
     <p>© 2026 Igreja do Evangelho Quadrangular</p>
   </div>
 </footer>
+
+<!-- 🔥 SCRIPT DO EFEITO -->
+<script>
+const botoes = document.querySelectorAll('.filtro a');
+const categorias = document.querySelectorAll('.categoria');
+
+botoes.forEach(btn => {
+  btn.addEventListener('click', () => {
+    categorias.forEach(c => c.classList.add('apagado'));
+
+    const id = btn.getAttribute('href');
+    if(id !== "#topo"){
+      document.querySelector(id).classList.remove('apagado');
+    } else {
+      categorias.forEach(c => c.classList.remove('apagado'));
+    }
+  });
+});
+
+document.addEventListener('click', (e) => {
+  if(!e.target.closest('.filtro')){
+    categorias.forEach(c => c.classList.remove('apagado'));
+  }
+});
+</script>
 
 </body>
 </html>
