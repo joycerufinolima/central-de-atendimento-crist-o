@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="pagina-devocionais">
 
 <header>
   <div class="logo">
@@ -25,14 +25,13 @@
 </header>
 
 <section class="topo-devocional">
-  <div>
+  <div class="topo-texto">
     <h1>Devocionais</h1>
     <p>“Tua palavra é lâmpada para os meus pés e luz para o meu caminho.”</p>
     <p><strong>Salmos 119:105</strong></p>
   </div>
 </section>
 
-<!-- 🔹 BOTÕES -->
 <div class="filtro">
   <a href="#topo">Todos</a>
   <a href="#amor">Amor</a>
@@ -43,7 +42,7 @@
 
 <div class="container">
 
-  <!-- 🔹 CATEGORIA AMOR -->
+  <!-- AMOR -->
   <section id="amor" class="categoria">
     <h2>Devocionais sobre Amor</h2>
     <div class="cards">
@@ -51,19 +50,25 @@
       <div class="card">
         <h3>Devocional Amor 1</h3>
         <p>Texto sobre amor...</p>
-        <a href="#" class="btn">Acessar!</a>
+        <details>
+          <summary class="btn">Acessar</summary>
+          <p>Aqui vai o devocional completo sobre amor. “Amarás o teu próximo como a ti mesmo.” Reflita sobre como amar mesmo em tempos difíceis.</p>
+        </details>
       </div>
 
       <div class="card">
         <h3>Devocional Amor 2</h3>
         <p>Mais textos sobre amor...</p>
-        <a href="#" class="btn">Acessar!</a>
+        <details>
+          <summary class="btn">Acessar</summary>
+          <p>O amor é paciente, o amor é bondoso. Pense em como aplicar isso no seu dia a dia.</p>
+        </details>
       </div>
 
     </div>
   </section>
 
-  <!-- 🔹 CATEGORIA FÉ -->
+  <!-- FÉ -->
   <section id="fe" class="categoria">
     <h2>Devocionais sobre Fé</h2>
     <div class="cards">
@@ -71,7 +76,10 @@
       <div class="card">
         <h3>Devocional Fé 1</h3>
         <p>Texto sobre fé...</p>
-        <a href="#" class="btn">Acessar!</a>
+        <details>
+          <summary class="btn">Acessar</summary>
+          <p>“Ora, a fé é a certeza das coisas que se esperam...” Confie em Deus mesmo quando não entender.</p>
+        </details>
       </div>
 
     </div>
@@ -81,20 +89,19 @@
 
 <footer>
   <div class="footer-col">
-    <p>Jesus Salva, Cura, Batiza com Espirito Santo e Voltará!</p>
+    <p>Jesus Salva, Cura, Batiza com Espírito Santo e Voltará!</p>
     <p>© 2026 Igreja do Evangelho Quadrangular</p>
   </div>
 </footer>
 
-<!-- 🔥 SCRIPT DO EFEITO -->
 <script>
 const botoes = document.querySelectorAll('.filtro a');
 const categorias = document.querySelectorAll('.categoria');
 
 botoes.forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
     categorias.forEach(c => c.classList.add('apagado'));
-
     const id = btn.getAttribute('href');
     if(id !== "#topo"){
       document.querySelector(id).classList.remove('apagado');
