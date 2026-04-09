@@ -65,19 +65,12 @@ nav a:hover {
   color: var(--cor-destaque);
 }
 
-@media (max-width: 768px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
+
 
   nav a {
     margin: 0;
   }
-}
+
 
 /* ================= HERO / TOPO ================= */
 .hero,
@@ -347,25 +340,6 @@ nav a:hover {
 .pagina-aconselhamento .card {
   height: auto;
 }
-
-@media (max-width: 768px) {
-  header {
-    position: relative; /*muda isso */
-    flex-direction: column;
-    background: #000; /* opcional, ajuda na leitura */
-  }
-}
-
-@media (max-width: 768px) {
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
-}
-
 @media (max-width: 768px) {
   .hero,
   .topo-devocional,
@@ -373,5 +347,56 @@ nav a:hover {
   .topo-oracao,
   .topo-contato {
     padding-top: 40px;
+  }
+}
+/* esconder checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* ícone hamburguer */
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  /* mostrar botão */
+  .menu-icon {
+    display: block;
+  }
+
+  /* esconder menu inicialmente */
+  .menu {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    width: 220px;
+
+    background: rgba(0,0,0,0.95);
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: 0.3s ease;
+  }
+
+  .menu a {
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* QUANDO CLICAR */
+  #menu-toggle:checked ~ .menu {
+    max-height: 500px;
   }
 }
