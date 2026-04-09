@@ -400,3 +400,10 @@ nav a:hover {
     max-height: 500px;
   }
 }
+
+.aconselhamento-box {
+  max-width: 800px;
+  margin: 40px auto; /* centraliza */
+  padding: 0 20px;   /* espaço lateral */
+  text-align: center;
+}
