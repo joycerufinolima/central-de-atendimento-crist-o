@@ -42,28 +42,68 @@
   </div>
 </section>
 
+<div class="filtro">
+  <a href="#topo">Todos</a>
+  <a href="#ansiedade">Ansiedade</a>
+  <a href="#relacionamento">Relacionamento</a>
+</div>
+
+<div id="topo"></div>
+
 <div class="container">
-  <div class="cards">
 
-    <div class="card">
-      <h3>Devocional 1</h3>
-      <p>Texto do devocional aqui...</p>
-      <a href="#" class="btn">Ler mais</a>
+  <!-- ANSIEDADE -->
+  <section id="ansiedade" class="categoria">
+    <h2>Ansiedade</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Ansiedade</h3>
+        <p>Como lidar com a ansiedade segundo a Bíblia...</p>
+
+        <details>
+          <summary class="btn">Acessar</summary>
+          <p>"Lancem sobre Ele toda a sua ansiedade, porque Ele tem cuidado de vocês." (1 Pedro 5:7)
+
+              A Bíblia nos ensina que não precisamos carregar tudo sozinhos. Deus se importa com cada detalhe da nossa vida e nos convida a entregar nossas preocupações a Ele.
+
+              A ansiedade muitas vezes vem da tentativa de controlar tudo, mas a confiança em Deus nos lembra que Ele está no controle, mesmo quando não entendemos.
+
+              Aplicação:
+              Hoje, entregue a Deus aquilo que está te preocupando. Ore e escolha confiar que Ele cuida de você.</p>
+        </details>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Devocional 2</h3>
-      <p>Texto do devocional aqui...</p>
-      <a href="#" class="btn">Ler mais</a>
+  <!-- RELACIONAMENTO -->
+  <section id="relacionamento" class="categoria">
+    <h2>Relacionamento</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Relacionamento</h3>
+        <p>Conselhos bíblicos para relacionamentos...</p>
+
+        <details>
+          <summary class="btn">Acessar</summary>
+          <p>"Sejam completamente humildes e dóceis, e sejam pacientes, suportando uns aos outros com amor." (Efésios 4:2)
+
+              A Bíblia nos ensina que um bom relacionamento não é baseado só em sentimentos, mas em atitudes como paciência, humildade e amor. Nem sempre será fácil, mas é nesses momentos que escolhemos agir como Deus nos orienta.
+
+              Relacionamentos saudáveis são construídos com respeito, perdão e cuidado mútuo.
+
+              Aplicação:
+              Hoje, pratique a paciência e o amor em seus relacionamentos, mesmo nas pequenas atitudes.</p>
+        </details>
+      </div>
+
     </div>
+  </section>
 
-    <div class="card">
-      <h3>Devocional 3</h3>
-      <p>Texto do devocional aqui...</p>
-      <a href="#" class="btn">Ler mais</a>
-    </div>
-
-  </div>
 </div>
 
 <section class="pedido-conselho">
@@ -94,6 +134,48 @@
     <p>© 2026 Igreja do Evangelho Quadrangular</p>
 
     </footer>
+
+    <script>
+const botoes = document.querySelectorAll('.filtro a');
+const categorias = document.querySelectorAll('.categoria');
+
+botoes.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // botão ativo
+    botoes.forEach(b => b.classList.remove('ativo'));
+    btn.classList.add('ativo');
+
+    const id = btn.getAttribute('href');
+
+    // animação de saída
+    categorias.forEach(c => {
+      c.classList.add('apagado');
+    });
+
+    setTimeout(() => {
+      if(id !== "#topo"){
+        categorias.forEach(c => c.style.display = "none");
+        const alvo = document.querySelector(id);
+        alvo.style.display = "block";
+
+        setTimeout(() => {
+          alvo.classList.remove('apagado');
+        }, 50);
+
+      } else {
+        categorias.forEach(c => {
+          c.style.display = "block";
+          setTimeout(() => {
+            c.classList.remove('apagado');
+          }, 50);
+        });
+      }
+    }, 300);
+  });
+});
+</script>
 
 </body>
 </html>
